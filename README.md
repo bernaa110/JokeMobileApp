@@ -1,4 +1,4 @@
-# jokes_app
+# Joke Mobile Application
 
 A new Flutter project.
 
