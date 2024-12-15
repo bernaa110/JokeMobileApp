@@ -59,6 +59,25 @@
                     }
                 },
                 {
+                    "source": "/Users/babyspice110/JokeMobileApp/android/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "173,818",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "476,982"
+                    },
+                    "to": {
+                        "startLines": "155,159",
+                        "startColumns": "4,4",
+                        "startOffsets": "7894,8075",
+                        "endLines": "158,161",
+                        "endColumns": "12,12",
+                        "endOffsets": "8070,8239"
+                    }
+                },
+                {
                     "source": "/Users/babyspice110/.gradle/caches/transforms-3/c3e60d8edb6a86f432de0791fcaa87bd/transformed/lifecycle-runtime-2.7.0/res/values/values.xml",
                     "from": {
                         "startLines": "2",
@@ -90,25 +109,6 @@
                         "startOffsets": "5922,6931",
                         "endColumns": "41,59",
                         "endOffsets": "5959,6986"
-                    }
-                },
-                {
-                    "source": "/Users/babyspice110/StudioProjects/JokeMobileApp/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "173,818",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "476,982"
-                    },
-                    "to": {
-                        "startLines": "155,159",
-                        "startColumns": "4,4",
-                        "startOffsets": "7894,8075",
-                        "endLines": "158,161",
-                        "endColumns": "12,12",
-                        "endOffsets": "8070,8239"
                     }
                 },
                 {
