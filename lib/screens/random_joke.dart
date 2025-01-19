@@ -18,6 +18,8 @@ class _RandomJokeState extends State<RandomJoke> {
   void initState() {
     super.initState();
     getRandomJoke();
+
+
   }
 
   void getRandomJoke() async {
