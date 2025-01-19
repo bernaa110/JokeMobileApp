@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="gcm_defaultSenderId" translatable="false">910346515856</string>
+    <string name="google_api_key" translatable="false">AIzaSyCEg3MVvWvHvm3DnAzo54NN4NDKUBCmV4s</string>
+    <string name="google_app_id" translatable="false">1:910346515856:android:c7c0282e1ea3e6945baf15</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCEg3MVvWvHvm3DnAzo54NN4NDKUBCmV4s</string>
+    <string name="google_storage_bucket" translatable="false">jokes-app-66c09.firebasestorage.app</string>
+    <string name="project_id" translatable="false">jokes-app-66c09</string>
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
         
         <item name="android:windowBackground">@drawable/launch_background</item>

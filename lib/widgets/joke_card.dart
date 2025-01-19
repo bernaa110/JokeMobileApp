@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 class JokeCard extends StatelessWidget {
   final String setup;
   final String punchline;
+  final bool isFavorite;
+  final VoidCallback onFavoriteToggle;
 
-  const JokeCard({super.key, required this.setup, required this.punchline});
+  const JokeCard({super.key, required this.setup, required this.punchline, required this.isFavorite,
+    required this.onFavoriteToggle,});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +17,9 @@ class JokeCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
-      color: Colors.blue.shade50,
+      color: Colors.pink[50],
       child: InkWell(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(15),
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column(
@@ -27,7 +30,7 @@ class JokeCard extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
-                  color: Colors.blue,
+                  color: Colors.black87,
                 ),
               ),
               const SizedBox(height: 10),
@@ -40,6 +43,13 @@ class JokeCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
+              IconButton(
+                icon: Icon(
+                  Icons.favorite,
+                  color: isFavorite ? Colors.red : Colors.grey,
+                ),
+                onPressed: onFavoriteToggle,
+              ),
             ],
           ),
         ),

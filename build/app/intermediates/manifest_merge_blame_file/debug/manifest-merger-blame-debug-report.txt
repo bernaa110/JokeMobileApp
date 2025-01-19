@@ -5,8 +5,8 @@
 5    android:versionName="1.0.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="21"
-9        android:targetSdkVersion="34" />
+8        android:minSdkVersion="23"
+9        android:targetSdkVersion="35" />
 10    <!--
 11         The INTERNET permission is required for development. Specifically,
 12         the Flutter tool needs it to communicate with the running application
@@ -15,152 +15,556 @@
 15    <uses-permission android:name="android.permission.INTERNET" />
 15-->/Users/babyspice110/JokeMobileApp/android/app/src/debug/AndroidManifest.xml:6:5-66
 15-->/Users/babyspice110/JokeMobileApp/android/app/src/debug/AndroidManifest.xml:6:22-64
-16    <!--
-17     Required to query activities that can process text, see:
-18         https://developer.android.com/training/package-visibility and
-19         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
-20
-21         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
-22    -->
-23    <queries>
-23-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:39:5-44:15
-24        <intent>
-24-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:40:9-43:18
-25            <action android:name="android.intent.action.PROCESS_TEXT" />
-25-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:41:13-72
-25-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:41:21-70
-26
-27            <data android:mimeType="text/plain" />
-27-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:42:13-50
-27-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:42:19-48
-28        </intent>
-29    </queries>
+16    <!-- Permission should be placed here, directly inside the <manifest> tag -->
+17    <uses-permission
+17-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:3:5-100
+18        android:name="android.permission.SCHEDULE_EXACT_ALARM"
+18-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:3:22-76
+19        android:priority="1" />
+19-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:3:77-97
+20    <!--
+21 Required to query activities that can process text, see:
+22         https://developer.android.com/training/package-visibility and
+23         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+24
+25         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+26    -->
+27    <queries>
+27-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:40:5-45:15
+28        <intent>
+28-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:41:9-44:18
+29            <action android:name="android.intent.action.PROCESS_TEXT" />
+29-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:42:13-72
+29-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:42:21-70
 30
-31    <permission
-31-->[androidx.core:core:1.13.1] /Users/babyspice110/.gradle/caches/transforms-3/28ee8a5ebc96d117de5598ee6fce01ba/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
-32        android:name="com.example.jokes_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-32-->[androidx.core:core:1.13.1] /Users/babyspice110/.gradle/caches/transforms-3/28ee8a5ebc96d117de5598ee6fce01ba/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
-33        android:protectionLevel="signature" />
-33-->[androidx.core:core:1.13.1] /Users/babyspice110/.gradle/caches/transforms-3/28ee8a5ebc96d117de5598ee6fce01ba/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+31            <data android:mimeType="text/plain" />
+31-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:43:13-50
+31-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:43:19-48
+32        </intent>
+33    </queries>
 34
-35    <uses-permission android:name="com.example.jokes_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-35-->[androidx.core:core:1.13.1] /Users/babyspice110/.gradle/caches/transforms-3/28ee8a5ebc96d117de5598ee6fce01ba/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
-35-->[androidx.core:core:1.13.1] /Users/babyspice110/.gradle/caches/transforms-3/28ee8a5ebc96d117de5598ee6fce01ba/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
-36
-37    <application
-38        android:name="android.app.Application"
-39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-39-->[androidx.core:core:1.13.1] /Users/babyspice110/.gradle/caches/transforms-3/28ee8a5ebc96d117de5598ee6fce01ba/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
-40        android:debuggable="true"
-41        android:extractNativeLibs="true"
-42        android:icon="@mipmap/ic_launcher"
-43        android:label="jokes_app" >
-44        <activity
-45            android:name="com.example.jokes_app.MainActivity"
-46            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-47            android:exported="true"
-48            android:hardwareAccelerated="true"
-49            android:launchMode="singleTop"
-50            android:taskAffinity=""
-51            android:theme="@style/LaunchTheme"
-52            android:windowSoftInputMode="adjustResize" >
-53
-54            <!--
-55                 Specifies an Android theme to apply to this Activity as soon as
-56                 the Android process has started. This theme is visible to the user
-57                 while the Flutter UI initializes. After that, this theme continues
-58                 to determine the Window background behind the Flutter UI.
-59            -->
-60            <meta-data
-61                android:name="io.flutter.embedding.android.NormalTheme"
-62                android:resource="@style/NormalTheme" />
+35    <uses-permission android:name="android.permission.WAKE_LOCK" />
+35-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-68
+35-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:8:22-65
+36    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Permissions options for the `notification` group -->
+36-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-79
+36-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-76
+37    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+37-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-77
+37-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-74
+38    <uses-permission android:name="android.permission.VIBRATE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+38-->[:flutter_local_notifications] /Users/babyspice110/JokeMobileApp/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-66
+38-->[:flutter_local_notifications] /Users/babyspice110/JokeMobileApp/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:7:22-63
+39    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+39-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:26:5-82
+39-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:26:22-79
+40    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+40-->[com.google.android.recaptcha:recaptcha:18.5.1] /Users/babyspice110/.gradle/caches/transforms-3/9e181e2635df35dcbb54589450ec5b50/transformed/jetified-recaptcha-18.5.1/AndroidManifest.xml:9:5-98
+40-->[com.google.android.recaptcha:recaptcha:18.5.1] /Users/babyspice110/.gradle/caches/transforms-3/9e181e2635df35dcbb54589450ec5b50/transformed/jetified-recaptcha-18.5.1/AndroidManifest.xml:9:22-95
+41
+42    <permission
+42-->[androidx.core:core:1.13.1] /Users/babyspice110/.gradle/caches/transforms-3/0836b423b53061d6b1062d3aa442c11a/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+43        android:name="com.example.jokes_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+43-->[androidx.core:core:1.13.1] /Users/babyspice110/.gradle/caches/transforms-3/0836b423b53061d6b1062d3aa442c11a/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+44        android:protectionLevel="signature" />
+44-->[androidx.core:core:1.13.1] /Users/babyspice110/.gradle/caches/transforms-3/0836b423b53061d6b1062d3aa442c11a/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+45
+46    <uses-permission android:name="com.example.jokes_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+46-->[androidx.core:core:1.13.1] /Users/babyspice110/.gradle/caches/transforms-3/0836b423b53061d6b1062d3aa442c11a/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+46-->[androidx.core:core:1.13.1] /Users/babyspice110/.gradle/caches/transforms-3/0836b423b53061d6b1062d3aa442c11a/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+47
+48    <application
+48-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:4:5-34:19
+49        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+49-->[androidx.core:core:1.13.1] /Users/babyspice110/.gradle/caches/transforms-3/0836b423b53061d6b1062d3aa442c11a/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+50        android:debuggable="true"
+51        android:extractNativeLibs="false"
+52        android:icon="@mipmap/ic_launcher"
+52-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:6:9-43
+53        android:label="jokes_app" >
+53-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:5:9-34
+54        <activity
+54-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:7:9-28:20
+55            android:name="com.example.jokes_app.MainActivity"
+55-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:8:13-41
+56            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+56-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:13:13-163
+57            android:exported="true"
+57-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:9:13-36
+58            android:hardwareAccelerated="true"
+58-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:14:13-47
+59            android:launchMode="singleTop"
+59-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:10:13-43
+60            android:taskAffinity=""
+60-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:11:13-36
+61            android:theme="@style/LaunchTheme"
+61-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:12:13-47
+62            android:windowSoftInputMode="adjustResize" >
+62-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:15:13-55
 63
-64            <intent-filter>
-65                <action android:name="android.intent.action.MAIN" />
-66
-67                <category android:name="android.intent.category.LAUNCHER" />
-68            </intent-filter>
-69        </activity>
-70        <!--
-71             Don't delete the meta-data below.
-72             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-73        -->
-74        <meta-data
-75            android:name="flutterEmbedding"
-76            android:value="2" />
-77
-78        <uses-library
-78-->[androidx.window:window:1.2.0] /Users/babyspice110/.gradle/caches/transforms-3/a017c0c1c150e766625df730ca1d1522/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
-79            android:name="androidx.window.extensions"
-79-->[androidx.window:window:1.2.0] /Users/babyspice110/.gradle/caches/transforms-3/a017c0c1c150e766625df730ca1d1522/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
-80            android:required="false" />
-80-->[androidx.window:window:1.2.0] /Users/babyspice110/.gradle/caches/transforms-3/a017c0c1c150e766625df730ca1d1522/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
-81        <uses-library
-81-->[androidx.window:window:1.2.0] /Users/babyspice110/.gradle/caches/transforms-3/a017c0c1c150e766625df730ca1d1522/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
-82            android:name="androidx.window.sidecar"
-82-->[androidx.window:window:1.2.0] /Users/babyspice110/.gradle/caches/transforms-3/a017c0c1c150e766625df730ca1d1522/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
-83            android:required="false" />
-83-->[androidx.window:window:1.2.0] /Users/babyspice110/.gradle/caches/transforms-3/a017c0c1c150e766625df730ca1d1522/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
-84
-85        <provider
-85-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/babyspice110/.gradle/caches/transforms-3/6f1de229824e3b626519c3b4ed1eee9b/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
-86            android:name="androidx.startup.InitializationProvider"
-86-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/babyspice110/.gradle/caches/transforms-3/6f1de229824e3b626519c3b4ed1eee9b/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
-87            android:authorities="com.example.jokes_app.androidx-startup"
-87-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/babyspice110/.gradle/caches/transforms-3/6f1de229824e3b626519c3b4ed1eee9b/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
-88            android:exported="false" >
-88-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/babyspice110/.gradle/caches/transforms-3/6f1de229824e3b626519c3b4ed1eee9b/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
-89            <meta-data
-89-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/babyspice110/.gradle/caches/transforms-3/6f1de229824e3b626519c3b4ed1eee9b/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
-90                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-90-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/babyspice110/.gradle/caches/transforms-3/6f1de229824e3b626519c3b4ed1eee9b/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
-91                android:value="androidx.startup" />
-91-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/babyspice110/.gradle/caches/transforms-3/6f1de229824e3b626519c3b4ed1eee9b/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+64            <!--
+65                 Specifies an Android theme to apply to this Activity as soon as
+66                 the Android process has started. This theme is visible to the user
+67                 while the Flutter UI initializes. After that, this theme continues
+68                 to determine the Window background behind the Flutter UI.
+69            -->
+70            <meta-data
+70-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:20:13-23:15
+71                android:name="io.flutter.embedding.android.NormalTheme"
+71-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:21:17-72
+72                android:resource="@style/NormalTheme" />
+72-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:22:13-50
+73
+74            <intent-filter>
+74-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:24:13-27:29
+75                <action android:name="android.intent.action.MAIN" />
+75-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:25:17-68
+75-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:25:25-66
+76
+77                <category android:name="android.intent.category.LAUNCHER" />
+77-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:26:17-76
+77-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:26:27-74
+78            </intent-filter>
+79        </activity>
+80        <!--
+81             Don't delete the meta-data below.
+82             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+83        -->
+84        <meta-data
+84-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:31:9-33:33
+85            android:name="flutterEmbedding"
+85-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:32:13-44
+86            android:value="2" />
+86-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:33:13-30
+87
+88        <service
+88-->[:firebase_auth] /Users/babyspice110/JokeMobileApp/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-12:19
+89            android:name="com.google.firebase.components.ComponentDiscoveryService"
+89-->[:firebase_auth] /Users/babyspice110/JokeMobileApp/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:8:18-89
+90            android:directBootAware="true"
+90-->[com.google.firebase:firebase-common:21.0.0] /Users/babyspice110/.gradle/caches/transforms-3/f31c0a25595024a3e28ad4d09ad8d006/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:32:13-43
+91            android:exported="false" >
+91-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:68:13-37
 92            <meta-data
-92-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
-93                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-93-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
-94                android:value="androidx.startup" />
-94-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
-95        </provider>
-96
-97        <receiver
-97-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
-98            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-98-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
-99            android:directBootAware="false"
-99-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
-100            android:enabled="true"
-100-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
-101            android:exported="true"
-101-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
-102            android:permission="android.permission.DUMP" >
-102-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
-103            <intent-filter>
-103-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
-104                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-104-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
-104-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
-105            </intent-filter>
-106            <intent-filter>
-106-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
-107                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-107-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
-107-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
-108            </intent-filter>
-109            <intent-filter>
-109-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
-110                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-110-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
-110-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
-111            </intent-filter>
-112            <intent-filter>
-112-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
-113                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-113-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
-113-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/497b559c30d96929b625a427f3dee739/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
-114            </intent-filter>
-115        </receiver>
-116    </application>
-117
-118</manifest>
+92-->[:firebase_auth] /Users/babyspice110/JokeMobileApp/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-11:85
+93                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+93-->[:firebase_auth] /Users/babyspice110/JokeMobileApp/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:10:17-124
+94                android:value="com.google.firebase.components.ComponentRegistrar" />
+94-->[:firebase_auth] /Users/babyspice110/JokeMobileApp/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:11:17-82
+95            <meta-data
+95-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-38:85
+96                android:name="com.google.firebase.components:io.flutter.plugins.firebase.messaging.FlutterFirebaseAppRegistrar"
+96-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:37:17-128
+97                android:value="com.google.firebase.components.ComponentRegistrar" />
+97-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:38:17-82
+98            <meta-data
+98-->[:firebase_core] /Users/babyspice110/JokeMobileApp/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-11:85
+99                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+99-->[:firebase_core] /Users/babyspice110/JokeMobileApp/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:10:17-124
+100                android:value="com.google.firebase.components.ComponentRegistrar" />
+100-->[:firebase_core] /Users/babyspice110/JokeMobileApp/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:11:17-82
+101            <meta-data
+101-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:69:13-71:85
+102                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+102-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:70:17-109
+103                android:value="com.google.firebase.components.ComponentRegistrar" />
+103-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:71:17-82
+104            <meta-data
+104-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:57:13-59:85
+105                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
+105-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:58:17-122
+106                android:value="com.google.firebase.components.ComponentRegistrar" />
+106-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:59:17-82
+107            <meta-data
+107-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:60:13-62:85
+108                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+108-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:61:17-119
+109                android:value="com.google.firebase.components.ComponentRegistrar" />
+109-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:62:17-82
+110            <meta-data
+110-->[com.google.firebase:firebase-installations:18.0.0] /Users/babyspice110/.gradle/caches/transforms-3/a87699e7454b5728c7924146d63defc4/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:15:13-17:85
+111                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+111-->[com.google.firebase:firebase-installations:18.0.0] /Users/babyspice110/.gradle/caches/transforms-3/a87699e7454b5728c7924146d63defc4/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:16:17-130
+112                android:value="com.google.firebase.components.ComponentRegistrar" />
+112-->[com.google.firebase:firebase-installations:18.0.0] /Users/babyspice110/.gradle/caches/transforms-3/a87699e7454b5728c7924146d63defc4/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:17:17-82
+113            <meta-data
+113-->[com.google.firebase:firebase-installations:18.0.0] /Users/babyspice110/.gradle/caches/transforms-3/a87699e7454b5728c7924146d63defc4/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:18:13-20:85
+114                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+114-->[com.google.firebase:firebase-installations:18.0.0] /Users/babyspice110/.gradle/caches/transforms-3/a87699e7454b5728c7924146d63defc4/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:19:17-127
+115                android:value="com.google.firebase.components.ComponentRegistrar" />
+115-->[com.google.firebase:firebase-installations:18.0.0] /Users/babyspice110/.gradle/caches/transforms-3/a87699e7454b5728c7924146d63defc4/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:20:17-82
+116            <meta-data
+116-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/babyspice110/.gradle/caches/transforms-3/9ecf36d1d4727226fccf4864fb5b572e/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
+117                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+117-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/babyspice110/.gradle/caches/transforms-3/9ecf36d1d4727226fccf4864fb5b572e/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
+118                android:value="com.google.firebase.components.ComponentRegistrar" />
+118-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/babyspice110/.gradle/caches/transforms-3/9ecf36d1d4727226fccf4864fb5b572e/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
+119            <meta-data
+119-->[com.google.firebase:firebase-common:21.0.0] /Users/babyspice110/.gradle/caches/transforms-3/f31c0a25595024a3e28ad4d09ad8d006/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
+120                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+120-->[com.google.firebase:firebase-common:21.0.0] /Users/babyspice110/.gradle/caches/transforms-3/f31c0a25595024a3e28ad4d09ad8d006/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:36:17-109
+121                android:value="com.google.firebase.components.ComponentRegistrar" />
+121-->[com.google.firebase:firebase-common:21.0.0] /Users/babyspice110/.gradle/caches/transforms-3/f31c0a25595024a3e28ad4d09ad8d006/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:37:17-82
+122            <meta-data
+122-->[com.google.firebase:firebase-datatransport:18.2.0] /Users/babyspice110/.gradle/caches/transforms-3/e7a2f245bdc7ba401e72dc047dabe32c/transformed/jetified-firebase-datatransport-18.2.0/AndroidManifest.xml:25:13-27:85
+123                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+123-->[com.google.firebase:firebase-datatransport:18.2.0] /Users/babyspice110/.gradle/caches/transforms-3/e7a2f245bdc7ba401e72dc047dabe32c/transformed/jetified-firebase-datatransport-18.2.0/AndroidManifest.xml:26:17-115
+124                android:value="com.google.firebase.components.ComponentRegistrar" />
+124-->[com.google.firebase:firebase-datatransport:18.2.0] /Users/babyspice110/.gradle/caches/transforms-3/e7a2f245bdc7ba401e72dc047dabe32c/transformed/jetified-firebase-datatransport-18.2.0/AndroidManifest.xml:27:17-82
+125        </service>
+126        <service
+126-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-17:72
+127            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService"
+127-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-107
+128            android:exported="false"
+128-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-37
+129            android:permission="android.permission.BIND_JOB_SERVICE" />
+129-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-69
+130        <service
+130-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:18:9-24:19
+131            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
+131-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-97
+132            android:exported="false" >
+132-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-37
+133            <intent-filter>
+133-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-23:29
+134                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+134-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:22:17-78
+134-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:22:25-75
+135            </intent-filter>
+136        </service>
+137
+138        <receiver
+138-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:26:9-33:20
+139            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver"
+139-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-98
+140            android:exported="true"
+140-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-36
+141            android:permission="com.google.android.c2dm.permission.SEND" >
+141-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-73
+142            <intent-filter>
+142-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-32:29
+143                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+143-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:31:17-81
+143-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:31:25-78
+144            </intent-filter>
+145        </receiver>
+146
+147        <provider
+147-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:41:9-45:38
+148            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
+148-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-102
+149            android:authorities="com.example.jokes_app.flutterfirebasemessaginginitprovider"
+149-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:43:13-88
+150            android:exported="false"
+150-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:44:13-37
+151            android:initOrder="99" />
+151-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:45:13-35
+152
+153        <activity
+153-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:29:9-46:20
+154            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+154-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:30:13-80
+155            android:excludeFromRecents="true"
+155-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:31:13-46
+156            android:exported="true"
+156-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:32:13-36
+157            android:launchMode="singleTask"
+157-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:33:13-44
+158            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+158-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:34:13-72
+159            <intent-filter>
+159-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:35:13-45:29
+160                <action android:name="android.intent.action.VIEW" />
+160-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
+160-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
+161
+162                <category android:name="android.intent.category.DEFAULT" />
+162-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
+162-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
+163                <category android:name="android.intent.category.BROWSABLE" />
+163-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
+163-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
+164
+165                <data
+165-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:43:13-50
+166                    android:host="firebase.auth"
+167                    android:path="/"
+168                    android:scheme="genericidp" />
+169            </intent-filter>
+170        </activity>
+171        <activity
+171-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:47:9-64:20
+172            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+172-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:48:13-79
+173            android:excludeFromRecents="true"
+173-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:49:13-46
+174            android:exported="true"
+174-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:50:13-36
+175            android:launchMode="singleTask"
+175-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:51:13-44
+176            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+176-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:52:13-72
+177            <intent-filter>
+177-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:53:13-63:29
+178                <action android:name="android.intent.action.VIEW" />
+178-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
+178-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
+179
+180                <category android:name="android.intent.category.DEFAULT" />
+180-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
+180-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
+181                <category android:name="android.intent.category.BROWSABLE" />
+181-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
+181-->[com.google.firebase:firebase-auth:23.1.0] /Users/babyspice110/.gradle/caches/transforms-3/4b8c36cc7508df709597f7de1adaed4a/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
+182
+183                <data
+183-->/Users/babyspice110/JokeMobileApp/android/app/src/main/AndroidManifest.xml:43:13-50
+184                    android:host="firebase.auth"
+185                    android:path="/"
+186                    android:scheme="recaptcha" />
+187            </intent-filter>
+188        </activity>
+189
+190        <receiver
+190-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:29:9-40:20
+191            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+191-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:30:13-78
+192            android:exported="true"
+192-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:31:13-36
+193            android:permission="com.google.android.c2dm.permission.SEND" >
+193-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:32:13-73
+194            <intent-filter>
+194-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-32:29
+195                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+195-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:31:17-81
+195-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:31:25-78
+196            </intent-filter>
+197
+198            <meta-data
+198-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:37:13-39:40
+199                android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED"
+199-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:38:17-92
+200                android:value="true" />
+200-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:39:17-37
+201        </receiver>
+202        <!--
+203             FirebaseMessagingService performs security checks at runtime,
+204             but set to not exported to explicitly avoid allowing another app to call it.
+205        -->
+206        <service
+206-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:46:9-53:19
+207            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+207-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:47:13-82
+208            android:directBootAware="true"
+208-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:48:13-43
+209            android:exported="false" >
+209-->[com.google.firebase:firebase-messaging:24.1.0] /Users/babyspice110/.gradle/caches/transforms-3/6c5479b253d0bbf548d6b47965008260/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:49:13-37
+210            <intent-filter android:priority="-500" >
+210-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-23:29
+211                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+211-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:22:17-78
+211-->[:firebase_messaging] /Users/babyspice110/JokeMobileApp/build/firebase_messaging/intermediates/merged_manifest/debug/AndroidManifest.xml:22:25-75
+212            </intent-filter>
+213        </service>
+214        <service
+214-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/babyspice110/.gradle/caches/transforms-3/68108d287594ffbf8b91ae6b1d796151/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:24:9-32:19
+215            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
+215-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/babyspice110/.gradle/caches/transforms-3/68108d287594ffbf8b91ae6b1d796151/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:25:13-94
+216            android:enabled="true"
+216-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/babyspice110/.gradle/caches/transforms-3/68108d287594ffbf8b91ae6b1d796151/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:26:13-35
+217            android:exported="false" >
+217-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/babyspice110/.gradle/caches/transforms-3/68108d287594ffbf8b91ae6b1d796151/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:27:13-37
+218            <meta-data
+218-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/babyspice110/.gradle/caches/transforms-3/68108d287594ffbf8b91ae6b1d796151/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:29:13-31:104
+219                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
+219-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/babyspice110/.gradle/caches/transforms-3/68108d287594ffbf8b91ae6b1d796151/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:30:17-76
+220                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
+220-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/babyspice110/.gradle/caches/transforms-3/68108d287594ffbf8b91ae6b1d796151/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:31:17-101
+221        </service>
+222
+223        <activity
+223-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/babyspice110/.gradle/caches/transforms-3/68108d287594ffbf8b91ae6b1d796151/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:34:9-41:20
+224            android:name="androidx.credentials.playservices.HiddenActivity"
+224-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/babyspice110/.gradle/caches/transforms-3/68108d287594ffbf8b91ae6b1d796151/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:35:13-76
+225            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+225-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/babyspice110/.gradle/caches/transforms-3/68108d287594ffbf8b91ae6b1d796151/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:36:13-87
+226            android:enabled="true"
+226-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/babyspice110/.gradle/caches/transforms-3/68108d287594ffbf8b91ae6b1d796151/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:37:13-35
+227            android:exported="false"
+227-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/babyspice110/.gradle/caches/transforms-3/68108d287594ffbf8b91ae6b1d796151/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:38:13-37
+228            android:fitsSystemWindows="true"
+228-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/babyspice110/.gradle/caches/transforms-3/68108d287594ffbf8b91ae6b1d796151/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:39:13-45
+229            android:theme="@style/Theme.Hidden" >
+229-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/babyspice110/.gradle/caches/transforms-3/68108d287594ffbf8b91ae6b1d796151/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:40:13-48
+230        </activity>
+231
+232        <uses-library
+232-->[androidx.window:window:1.2.0] /Users/babyspice110/.gradle/caches/transforms-3/358deae1524aa6c0d3f933fbe35e5928/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+233            android:name="androidx.window.extensions"
+233-->[androidx.window:window:1.2.0] /Users/babyspice110/.gradle/caches/transforms-3/358deae1524aa6c0d3f933fbe35e5928/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+234            android:required="false" />
+234-->[androidx.window:window:1.2.0] /Users/babyspice110/.gradle/caches/transforms-3/358deae1524aa6c0d3f933fbe35e5928/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+235        <uses-library
+235-->[androidx.window:window:1.2.0] /Users/babyspice110/.gradle/caches/transforms-3/358deae1524aa6c0d3f933fbe35e5928/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+236            android:name="androidx.window.sidecar"
+236-->[androidx.window:window:1.2.0] /Users/babyspice110/.gradle/caches/transforms-3/358deae1524aa6c0d3f933fbe35e5928/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+237            android:required="false" />
+237-->[androidx.window:window:1.2.0] /Users/babyspice110/.gradle/caches/transforms-3/358deae1524aa6c0d3f933fbe35e5928/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+238
+239        <provider
+239-->[com.google.firebase:firebase-common:21.0.0] /Users/babyspice110/.gradle/caches/transforms-3/f31c0a25595024a3e28ad4d09ad8d006/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
+240            android:name="com.google.firebase.provider.FirebaseInitProvider"
+240-->[com.google.firebase:firebase-common:21.0.0] /Users/babyspice110/.gradle/caches/transforms-3/f31c0a25595024a3e28ad4d09ad8d006/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:24:13-77
+241            android:authorities="com.example.jokes_app.firebaseinitprovider"
+241-->[com.google.firebase:firebase-common:21.0.0] /Users/babyspice110/.gradle/caches/transforms-3/f31c0a25595024a3e28ad4d09ad8d006/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:25:13-72
+242            android:directBootAware="true"
+242-->[com.google.firebase:firebase-common:21.0.0] /Users/babyspice110/.gradle/caches/transforms-3/f31c0a25595024a3e28ad4d09ad8d006/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:26:13-43
+243            android:exported="false"
+243-->[com.google.firebase:firebase-common:21.0.0] /Users/babyspice110/.gradle/caches/transforms-3/f31c0a25595024a3e28ad4d09ad8d006/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:27:13-37
+244            android:initOrder="100" />
+244-->[com.google.firebase:firebase-common:21.0.0] /Users/babyspice110/.gradle/caches/transforms-3/f31c0a25595024a3e28ad4d09ad8d006/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:28:13-36
+245
+246        <activity
+246-->[com.google.android.gms:play-services-auth:20.7.0] /Users/babyspice110/.gradle/caches/transforms-3/806f0e68bf478ffd07cc07445a67d860/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
+247            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+247-->[com.google.android.gms:play-services-auth:20.7.0] /Users/babyspice110/.gradle/caches/transforms-3/806f0e68bf478ffd07cc07445a67d860/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
+248            android:excludeFromRecents="true"
+248-->[com.google.android.gms:play-services-auth:20.7.0] /Users/babyspice110/.gradle/caches/transforms-3/806f0e68bf478ffd07cc07445a67d860/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
+249            android:exported="false"
+249-->[com.google.android.gms:play-services-auth:20.7.0] /Users/babyspice110/.gradle/caches/transforms-3/806f0e68bf478ffd07cc07445a67d860/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
+250            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+250-->[com.google.android.gms:play-services-auth:20.7.0] /Users/babyspice110/.gradle/caches/transforms-3/806f0e68bf478ffd07cc07445a67d860/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
+251        <!--
+252            Service handling Google Sign-In user revocation. For apps that do not integrate with
+253            Google Sign-In, this service will never be started.
+254        -->
+255        <service
+255-->[com.google.android.gms:play-services-auth:20.7.0] /Users/babyspice110/.gradle/caches/transforms-3/806f0e68bf478ffd07cc07445a67d860/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
+256            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+256-->[com.google.android.gms:play-services-auth:20.7.0] /Users/babyspice110/.gradle/caches/transforms-3/806f0e68bf478ffd07cc07445a67d860/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
+257            android:exported="true"
+257-->[com.google.android.gms:play-services-auth:20.7.0] /Users/babyspice110/.gradle/caches/transforms-3/806f0e68bf478ffd07cc07445a67d860/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
+258            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+258-->[com.google.android.gms:play-services-auth:20.7.0] /Users/babyspice110/.gradle/caches/transforms-3/806f0e68bf478ffd07cc07445a67d860/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
+259            android:visibleToInstantApps="true" />
+259-->[com.google.android.gms:play-services-auth:20.7.0] /Users/babyspice110/.gradle/caches/transforms-3/806f0e68bf478ffd07cc07445a67d860/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
+260
+261        <activity
+261-->[com.google.android.gms:play-services-base:18.0.1] /Users/babyspice110/.gradle/caches/transforms-3/5b367787a387be5533a8e7ca64a3d60c/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+262            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+262-->[com.google.android.gms:play-services-base:18.0.1] /Users/babyspice110/.gradle/caches/transforms-3/5b367787a387be5533a8e7ca64a3d60c/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+263            android:exported="false"
+263-->[com.google.android.gms:play-services-base:18.0.1] /Users/babyspice110/.gradle/caches/transforms-3/5b367787a387be5533a8e7ca64a3d60c/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+264            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+264-->[com.google.android.gms:play-services-base:18.0.1] /Users/babyspice110/.gradle/caches/transforms-3/5b367787a387be5533a8e7ca64a3d60c/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+265
+266        <meta-data
+266-->[com.google.android.gms:play-services-basement:18.4.0] /Users/babyspice110/.gradle/caches/transforms-3/22e5164fcd1a7a82144576b0e22c8fce/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+267            android:name="com.google.android.gms.version"
+267-->[com.google.android.gms:play-services-basement:18.4.0] /Users/babyspice110/.gradle/caches/transforms-3/22e5164fcd1a7a82144576b0e22c8fce/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
+268            android:value="@integer/google_play_services_version" />
+268-->[com.google.android.gms:play-services-basement:18.4.0] /Users/babyspice110/.gradle/caches/transforms-3/22e5164fcd1a7a82144576b0e22c8fce/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+269
+270        <provider
+270-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/babyspice110/.gradle/caches/transforms-3/6ce88413cdcafa8d8713cb1c25e89b74/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+271            android:name="androidx.startup.InitializationProvider"
+271-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/babyspice110/.gradle/caches/transforms-3/6ce88413cdcafa8d8713cb1c25e89b74/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
+272            android:authorities="com.example.jokes_app.androidx-startup"
+272-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/babyspice110/.gradle/caches/transforms-3/6ce88413cdcafa8d8713cb1c25e89b74/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
+273            android:exported="false" >
+273-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/babyspice110/.gradle/caches/transforms-3/6ce88413cdcafa8d8713cb1c25e89b74/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
+274            <meta-data
+274-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/babyspice110/.gradle/caches/transforms-3/6ce88413cdcafa8d8713cb1c25e89b74/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+275                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+275-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/babyspice110/.gradle/caches/transforms-3/6ce88413cdcafa8d8713cb1c25e89b74/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+276                android:value="androidx.startup" />
+276-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/babyspice110/.gradle/caches/transforms-3/6ce88413cdcafa8d8713cb1c25e89b74/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+277            <meta-data
+277-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+278                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+278-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+279                android:value="androidx.startup" />
+279-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+280        </provider>
+281
+282        <receiver
+282-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+283            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+283-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+284            android:directBootAware="false"
+284-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+285            android:enabled="true"
+285-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+286            android:exported="true"
+286-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+287            android:permission="android.permission.DUMP" >
+287-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+288            <intent-filter>
+288-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+289                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+289-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+289-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+290            </intent-filter>
+291            <intent-filter>
+291-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+292                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+292-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+292-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+293            </intent-filter>
+294            <intent-filter>
+294-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+295                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+295-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+295-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+296            </intent-filter>
+297            <intent-filter>
+297-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+298                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+298-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+298-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/babyspice110/.gradle/caches/transforms-3/b0af98a2c45fd056e1025426396eee57/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+299            </intent-filter>
+300        </receiver>
+301
+302        <service
+302-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/babyspice110/.gradle/caches/transforms-3/c1690dd6a5f2bc4365ee4d4f0ab7e5ce/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:28:9-34:19
+303            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+303-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/babyspice110/.gradle/caches/transforms-3/c1690dd6a5f2bc4365ee4d4f0ab7e5ce/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:29:13-103
+304            android:exported="false" >
+304-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/babyspice110/.gradle/caches/transforms-3/c1690dd6a5f2bc4365ee4d4f0ab7e5ce/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:30:13-37
+305            <meta-data
+305-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/babyspice110/.gradle/caches/transforms-3/c1690dd6a5f2bc4365ee4d4f0ab7e5ce/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:31:13-33:39
+306                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+306-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/babyspice110/.gradle/caches/transforms-3/c1690dd6a5f2bc4365ee4d4f0ab7e5ce/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:32:17-94
+307                android:value="cct" />
+307-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/babyspice110/.gradle/caches/transforms-3/c1690dd6a5f2bc4365ee4d4f0ab7e5ce/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:33:17-36
+308        </service>
+309        <service
+309-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/babyspice110/.gradle/caches/transforms-3/e60429426932491ae90b150712956c71/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:26:9-30:19
+310            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+310-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/babyspice110/.gradle/caches/transforms-3/e60429426932491ae90b150712956c71/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:27:13-117
+311            android:exported="false"
+311-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/babyspice110/.gradle/caches/transforms-3/e60429426932491ae90b150712956c71/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:28:13-37
+312            android:permission="android.permission.BIND_JOB_SERVICE" >
+312-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/babyspice110/.gradle/caches/transforms-3/e60429426932491ae90b150712956c71/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:29:13-69
+313        </service>
+314
+315        <receiver
+315-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/babyspice110/.gradle/caches/transforms-3/e60429426932491ae90b150712956c71/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:32:9-34:40
+316            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+316-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/babyspice110/.gradle/caches/transforms-3/e60429426932491ae90b150712956c71/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:33:13-132
+317            android:exported="false" /> <!-- The activities will be merged into the manifest of the hosting app. -->
+317-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/babyspice110/.gradle/caches/transforms-3/e60429426932491ae90b150712956c71/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:34:13-37
+318        <activity
+318-->[com.google.android.play:core-common:2.0.3] /Users/babyspice110/.gradle/caches/transforms-3/8a9e79e5cc492c81d2ba3aa6c1e19aa8/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:14:9-18:65
+319            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+319-->[com.google.android.play:core-common:2.0.3] /Users/babyspice110/.gradle/caches/transforms-3/8a9e79e5cc492c81d2ba3aa6c1e19aa8/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:15:13-93
+320            android:exported="false"
+320-->[com.google.android.play:core-common:2.0.3] /Users/babyspice110/.gradle/caches/transforms-3/8a9e79e5cc492c81d2ba3aa6c1e19aa8/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:16:13-37
+321            android:stateNotNeeded="true"
+321-->[com.google.android.play:core-common:2.0.3] /Users/babyspice110/.gradle/caches/transforms-3/8a9e79e5cc492c81d2ba3aa6c1e19aa8/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:17:13-42
+322            android:theme="@style/Theme.PlayCore.Transparent" />
+322-->[com.google.android.play:core-common:2.0.3] /Users/babyspice110/.gradle/caches/transforms-3/8a9e79e5cc492c81d2ba3aa6c1e19aa8/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:18:13-62
+323    </application>
+324
+325</manifest>
